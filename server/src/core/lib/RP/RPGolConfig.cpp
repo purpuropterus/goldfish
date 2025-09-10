@@ -88,7 +88,7 @@ void RPGolConfig::MakeWindSet(const RPGolDifficulty &diff, RPGolWindSet &out, bo
             do
             {
                 nextSpd = randomSpeeds[randomSpeedsIdx++];
-            } while ((nextSpd < diff.minWind) && (nextSpd > diff.maxWind));
+            } while ((nextSpd < diff.minWind) || (nextSpd > diff.maxWind));
 
             out[i].mSpeed = nextSpd;
 
