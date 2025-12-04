@@ -98,8 +98,8 @@ OgWindFinderOutputWithErrorFFI find_og_wind(const OgWindFinderInputFFI &input, c
     }
     catch (const std::exception &e)
     {
+        std::cout << rust::String(e.what()) << std::endl;
         finalOutput.error = rust::String("An error occured");
-        // finalOutput.error = rust::String(e.what());
     }
     return finalOutput;
 }
@@ -148,8 +148,9 @@ ScoredOgBlinkFinderOutputWithErrorFFI find_og_blink(const OgBlinkFinderInputFFI 
     }
     catch (const std::exception &e)
     {
-        // finalOutput.error = rust::String("An error occured");
-        finalOutput.error = rust::String(e.what());
+        std::cout << rust::String(e.what()) << std::endl;
+        finalOutput.error = rust::String("An error occured");
+        // finalOutput.error = rust::String(e.what());
     }
 
     return finalOutput;
